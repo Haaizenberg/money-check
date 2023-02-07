@@ -13,4 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'app');
+Route::view('/', 'pages.index')->name('index');

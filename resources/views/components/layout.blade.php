@@ -4,11 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>{{ $title ?? "Money Check App"  }}</title>
 
-        <link rel="stylesheet" href="css/app.css">
+        {{ $css }}
     </head>
     <body>
-        <script src="js/app.js"></script>
+        {{ $slot }}
+        {{ $js }}
     </body>
 </html>
