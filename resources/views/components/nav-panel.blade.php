@@ -8,8 +8,13 @@
             </div>
             <div class="nav-panel__right-row">
                 <div class="nav-panel__authorize">
+                @auth
+                    <a href="{{ route('logout') }}" class="btn btn-outline-light nav-panel__authorize-btn">Выйти</a>
+                @endauth
+                @guest
                     <button type="button" class="btn btn-outline-light nav-panel__authorize-btn" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>
                     <button type="button" class="btn btn-outline-light nav-panel__authorize-btn" data-bs-toggle="modal" data-bs-target="#registerModal">Зарегистрироваться</button>
+                @endguest
                 </div>
             </div>
         </div>

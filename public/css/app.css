@@ -11809,3 +11809,8 @@ body {
 .modal-content {
   background: #282C33;
 }
+.money-check-link__start-btn {
+  height: 50px;
+  width: 160px;
+  font-size: 24px;
+}

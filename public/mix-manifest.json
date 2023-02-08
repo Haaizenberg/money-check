@@ -1,6 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
     "/images/components/nav-panel/arrow-down.svg": "/images/components/nav-panel/arrow-down.svg",
-    "/images/components/nav-panel/logo.svg": "/images/components/nav-panel/logo.svg"
+    "/images/components/nav-panel/logo.svg": "/images/components/nav-panel/logo.svg",
+    "/css/app.css": "/css/app.css"
 }
