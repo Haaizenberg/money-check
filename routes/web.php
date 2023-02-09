@@ -23,6 +23,9 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('/logout', 'logout')->name('logout');
 });
 
-Route::middleware('auth')->controller(MoneyCheckController::class)->group(function () {
-    Route::get('/money-check', 'index')->name('money-check');
-});
+Route::middleware('auth')
+    ->controller(MoneyCheckController::class)
+    ->group(function () {
+            Route::get('/money-check', 'index')->name('money-check');
+            Route::post('/add-expense')->name('add-expense');
+    });

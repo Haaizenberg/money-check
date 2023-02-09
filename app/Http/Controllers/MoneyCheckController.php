@@ -9,6 +9,8 @@ class MoneyCheckController extends Controller
 {
     public function index(Request $request)
     {
-        return view('pages.money-check');
+        return view('pages.money-check', [
+            'expenses' => [],
+        ]);
     }
 }
