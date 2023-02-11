@@ -1,3 +1,5 @@
+import { toInteger } from "lodash";
+
 export default class Expenses {
     constructor() {
         this.initListeners();
@@ -14,25 +16,31 @@ export default class Expenses {
             if (money === '' || subject === '') {
                 this.showError('Не оставляй пустых полей, пожалуйста :)');
             } else {
-                errorBlock.hide();
+                this.cleanErrors();
 
-                axios.post($(e.target).attr('action'), {
+                window.axios.post($(e.target).attr('action'), {
                     'money': money,
                     'subject': subject,
                 }).then(response => {
-
+                    if (response.statusText === 'OK') {
+                        location.reload();
+                    }
                 }).error(error => {
-                    errorBlock.append('<li>Не оставляй пустых полей, пожалуйста :)</li>');
-                    errorBlock.show();
+                    this.showError('Не оставляй пустых полей, пожалуйста :)');
                 });
             }
         });
     }
 
     showError(errorText) {
-        const errorBlock = $(e.target).find('.form-errors');
+        const errorBlock = $('.form-errors');
         errorBlock.empty();
         errorBlock.append(`<li>${errorText}</li>`);
         errorBlock.show();
+    }
+
+    cleanErrors() {
+        const errorBlock = $('.form-errors');
+        errorBlock.empty();
     }
 }

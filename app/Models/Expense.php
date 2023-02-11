@@ -15,4 +15,11 @@ class Expense extends Model
         'subject',
         'money',
     ];
+
+    public static function add(array $attributes): ?self
+    {
+        $newOne = self::create($attributes);
+
+        return $newOne;
+    }
 }

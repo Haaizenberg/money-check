@@ -1,5 +1,5 @@
-<div class="row expense">
-    <div class="expense__date">{{ $expense->date }}</div>
-    <div class="expense__subject">{{ $expense->subject }}</div>
-    <div class="expense__money">{{ $expense->money }}</div>
+<div class="mb-3 d-flex expense">
+    <div class="w-25 expense__date">{{ $expense->updated_at }}</div>
+    <div class="w-50 ms-3 expense__subject">{{ $expense->subject }}</div>
+    <div class="w-25 ms-3 text-end expense__money">{{ $expense->money }} руб</div>
 </div>

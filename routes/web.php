@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MoneyCheckController;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,5 +28,5 @@ Route::middleware('auth')
     ->controller(MoneyCheckController::class)
     ->group(function () {
             Route::get('/money-check', 'index')->name('money-check');
-            Route::post('/add-expense')->name('add-expense');
+            Route::post('/add-expense', 'addExpense')->name('add-expense');
     });
