@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Log;
 
 class Expense extends Model
 {
@@ -16,10 +17,11 @@ class Expense extends Model
         'money',
     ];
 
+
     public static function add(array $attributes): ?self
     {
-        $newOne = self::create($attributes);
-
-        return $newOne;
+        return self::create($attributes);
     }
+
+
 }

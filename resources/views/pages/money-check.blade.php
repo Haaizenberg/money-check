@@ -5,7 +5,7 @@
 
     <main>
         <x-nav-panel></x-nav-panel>
-        <x-greeting></x-greeting>
+        <!-- <x-greeting></x-greeting> -->
         <x-expenses :expenses="$expenses"></x-expenses>
     </main>
 

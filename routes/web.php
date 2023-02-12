@@ -30,3 +30,5 @@ Route::middleware('auth')
             Route::get('/money-check', 'index')->name('money-check');
             Route::post('/add-expense', 'addExpense')->name('add-expense');
     });
+
+Route::get('/test', [TestController::class, 'index']);
