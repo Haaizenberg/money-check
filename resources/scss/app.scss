@@ -1,0 +1,25 @@
+@import "bootstrap";
+
+// Utils
+@import "utils/reset";
+@import "utils/container";
+
+// @import '~bootstrap';
+
+// Fonts
+@import "../fonts/Fira_Code/firacode.css";
+
+// Colors
+@import "utils/colors";
+
+body {
+    font-family: 'Fira Code';
+    background: $backgroundColorPrimary;
+    color: $textColorPrimary;
+}
+
+// Components
+@import "components/nav-panel/nav-panel";
+
+@import "includes/modal-auth";
+@import "includes/money-check-link";
