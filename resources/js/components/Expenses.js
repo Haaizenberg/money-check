@@ -3,6 +3,8 @@ import { toInteger } from "lodash";
 export default class Expenses {
     constructor() {
         this.initListeners();
+        $('input[name=subject]').trigger('focus');
+
     }
 
     initListeners() {
@@ -24,6 +26,8 @@ export default class Expenses {
                 }).then(response => {
                     if (response.statusText === 'OK') {
                         location.reload();
+                        $('input[name=subject], input[name=money]').val('');
+                        $('input[name=subject]').trigger('focus');
                     }
                 }).error(error => {
                     this.showError('Не оставляй пустых полей, пожалуйста :)');
