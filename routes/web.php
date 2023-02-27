@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MoneyCheckController;
+use App\Http\Controllers\StartPointController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,10 +26,18 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 Route::middleware('auth')
-    ->controller(MoneyCheckController::class)
     ->group(function () {
+        Route::controller(MoneyCheckController::class)->group(function () {
             Route::get('/money-check', 'index')->name('money-check');
             Route::post('/add-expense', 'addExpense')->name('add-expense');
+        });
+
+        Route::prefix('start-point')
+            ->controller(StartPointController::class)
+            ->group(function () {
+                Route::get('/index', 'index')->name('start-point');
+            });
     });
+
 
 Route::get('/test', [TestController::class, 'index']);

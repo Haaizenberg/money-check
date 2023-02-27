@@ -6,6 +6,19 @@
                 <span class="nav-panel__logo-text">Money Check</span>
                 <a href="{{ route('index') }}" class="nav-panel__logo-link"></a>
             </div>
+
+            <div class="nav-panel__middle-row">
+                <a 
+                    href="{{ route('start-point') }}" 
+                    @class([
+                        'link',
+                        'link_active' => request()->route()->named('start-point'),
+                    ])
+                >
+                    Точки отсчета
+                </a>
+            </div>
+
             <div class="nav-panel__right-row">
                 <div class="nav-panel__authorize d-flex align-items-center">
                 @auth

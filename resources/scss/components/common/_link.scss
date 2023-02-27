@@ -1,0 +1,28 @@
+.link {
+    color: white;
+    text-decoration: none;
+    transition: all ease-in-out 1s;
+
+    &::after {
+        content: '';
+        width: 0px;
+        height: 2px;
+        display: block;
+        background: white;
+        transition: 300ms;
+    }
+
+    &:hover {
+        &::after {
+            width: 100%;
+        }
+    }
+
+    &_active {
+        font-weight: bold;
+        
+        &::after {
+            width: 100%;
+        }
+    }
+}

@@ -15,6 +15,7 @@ class TestController extends Controller
         // dump(date('l j F Y G:i:s', time()));
         // dump(date('l j F Y G:i:s', strtotime('+ 3 month')));
         // dump(date('l j F Y G:i:s', strtotime('last Friday')));
-        dump(Carbon::now()->translatedFormat('l j F Y H:i:s'));
+        // dump(Carbon::now()->translatedFormat('l j F Y H:i:s'));
+        dump(request()->route()->named('a'));
     }
 }
