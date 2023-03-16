@@ -1,16 +1,13 @@
-import { toInteger } from "lodash";
-
 export default class Expenses {
     constructor() {
         this.initListeners();
         $('input[name=subject]').trigger('focus');
-
     }
 
     initListeners() {
         $('#add_expense_form').on('submit', (e) => {
             e.preventDefault();
-            
+
             const money = $(e.target).find('input[name=money]').val();
             const subject = $(e.target).find('input[name="subject"]').val();
             $(e.target).find('.form-errors').empty();
